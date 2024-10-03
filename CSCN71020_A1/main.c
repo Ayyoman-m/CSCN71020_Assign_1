@@ -43,13 +43,23 @@ void printOptions() {
 
 void add() {
 	double num1, num2, result;
-	printf("Enter the first value:");
-	scanf_s("%lf", &num1);
-	printf("Enter the second value:");
-	scanf_s("%lf", &num2);
+
+	printf("Enter the first value: ");
+	if (scanf_s("%lf", &num1) != 1) {
+		printf("Invalid input for the first number. Please try again.\n");
+		return;
+	}
+
+	printf("Enter the second value: ");
+	if (scanf_s("%lf", &num2) != 1) {
+		printf("Invalid input for the second number. Please try again.\n");
+		return;
+	}
+
 	result = num1 + num2;
 	printf("%lf + %lf = %lf\n", num1, num2, result);
 }
+
 
 void subtract() {
 	int num1, num2;
